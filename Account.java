@@ -15,5 +15,39 @@ public class Account {
     public void setCustomerNumber(int customerNumber){
         this.customerNumber = customerNumber;
     }
+public int getCustomerNumber(){
+        return customerNumber;
+    }
 
+    public void setPinNumber(int pinNumber){
+        this.pinNumber = pinNumber;
+    }
+
+    public int getPinNumber(){
+        return pinNumber;
+    }
+
+    public double getCheckingBalance() {
+        return checkingBalance;
+    }
+
+    public double getSavingBalance(){
+        return savingBalance;
+    }
+
+    public void calcCheckingWithdraw(double amount){
+        checkingBalance -= amount;
+    }
+
+    public void calcSavingWithdraw(double amount){
+        savingBalance -= amount;
+    }
+
+    public void calcCheckingDeposit(double amount){
+        checkingBalance += amount;
+    }
+
+    public void calcSavingDeposit(double amount){
+        savingBalance += amount;
+    }
 }
