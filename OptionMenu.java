@@ -13,7 +13,7 @@ public class OptionMenu extends Account {
         int x = 1;
         do {
             try {
-
+                
                 data.put(952141, 191904);
                 data.put(989947, 717976);
 
@@ -25,7 +25,7 @@ public class OptionMenu extends Account {
                 setPinNumber(menuInput.nextInt()); 
             }
             catch(Exception e) {
-            
+                
                 System.out.println("\nInvalid Characters Only Numbers Allowed\n" + e);
                 x = 2; 
             }
@@ -33,6 +33,7 @@ public class OptionMenu extends Account {
             int cn = getCustomerNumber();
             int pn = getPinNumber();
 
+            
             if (data.containsKey(cn) && data.get(cn) == pn) {
                 getAccountType(); 
             }
@@ -52,11 +53,12 @@ public class OptionMenu extends Account {
 
         switch (selection) {
             case 1 -> getChecking(); 
-            case 2 -> getSaving();   
+            case 2 -> getSaving();  
             case 3 -> System.out.println("Thank you for using ATM, BYE\n");
-            default -> System.out.println("\n Invalid Choice \n");
+            default -> System.out.println("\n Invalid Choice \n"); 
         }
     }
+
 
     public void getChecking() {
         System.out.println("Checking Account");
@@ -75,7 +77,7 @@ public class OptionMenu extends Account {
             case 2 -> {
                 getCheckingWithdrawInput(); 
                 getAccountType();
-
+            }
             case 3 -> {
                 getCheckingDepositInput(); 
                 getAccountType();
@@ -87,6 +89,7 @@ public class OptionMenu extends Account {
             }
         }
     }
+
     public void getSaving() {
         System.out.println("Saving Account");
         System.out.println("Type 1 - View Balance");
@@ -99,6 +102,7 @@ public class OptionMenu extends Account {
 
         switch (selection) {
             case 1 -> {
+                
                 System.out.println("Saving Account Balance: " + moneyFormat.format(getSavingBalance()));
                 getAccountType(); 
             }
